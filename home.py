@@ -7,6 +7,7 @@ win=Tk()
 win.title('simple prime number')
 main=Frame(win)
 win.geometry("700x350")
+win.configure(bg='yellow') 
 
 
 def forget():
@@ -112,14 +113,14 @@ options =[
 
 clicked = StringVar()
 clicked.set(options[0])
-Label(win, text="Enter Number", font=('Calibri 10')).place(x=315, y=5)
+Label(win, text="Enter Number", font=('Calibri 10'), bg="yellow", fg="black").place(x=315, y=5)
 drop = ttk.Combobox(win, width = 27, textvariable = clicked, value=options)
 drop.place(x=265, y=35)
 
 
-myButton1 = Button(win, text="Show Selection", command=show)
+myButton1 = Button(win, text="Show Selection", bg="red", fg="white", command=show)
 myButton1.place(x=265, y=61)
-myButton2 = Button(win,width=11, text="delete con", command=forget)
+myButton2 = Button(win,width=11, text="delete con", bg="pink", fg="white", command=forget)
 myButton2.place(x=365, y=61)
 
 
