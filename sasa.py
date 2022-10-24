@@ -1,34 +1,21 @@
 
-# Imports tkinter and ttk module
-from tkinter import * 
-from tkinter.ttk import *
-  
-# toplevel window
+# Import Module
+from tkinter import *
+from PIL import Image, ImageTk
+ 
+# Create Tkinter Object
 root = Tk()
-  
-# method to make widget invisible
-# or remove from toplevel
-def forget(widget):
-    widget.forget()
-  
-# method to make widget visible
-def retrieve(widget):
-    widget.pack(fill = BOTH, expand = True)
-  
-# Button widgets
-b1 = Button(root, text = "Btn 1")
-b1.pack_forget()
-
-b4 = Button(root, text = "Btn 1")
-b4.pack_forget()
-  
-# See, in command forget() method is passed
-b2 = Button(root, text = "Btn 2", command = lambda : forget(b1))
-b2.pack(fill = BOTH, expand = True)
-  
-# In command retrieve() method is passed
-b3 = Button(root, text = "Btn 3", command = lambda : retrieve(b1 and b4))
-b3.pack(fill = BOTH, expand = True)
-  
+ 
+image = Image.open("Image File Path")
+ 
+# Resize the image using resize() method
+resize_image = image.resize((width, height))
+ 
+img = ImageTk.PhotoImage(resize_image)
+ 
+# create label and add resize image
+label1 = Label(image=img)
+label1.image = img
+label1.pack()
 # infinite loop, interrupted by keyboard or mouse
 mainloop()
